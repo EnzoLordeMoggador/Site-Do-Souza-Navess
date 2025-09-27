@@ -1,0 +1,478 @@
+* { /*  */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none; /* usuario nao pode selecionar textos */
+}
+
+@keyframes animar { /* ANIMAÇÃO DO LOGO DO SOUZA */
+  from {
+    rotate: -80deg; /* rotação */
+    margin-right: 100px;
+  }
+  to {
+    rotate: 0deg;
+    margin-right: 0px;
+  }
+}
+
+body { /* deixa o body com altura maxima de toda a estrutura, muda a cor de fundo e a fonte */
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgb(2, 94, 14), rgb(1, 14, 138));
+  font-family: "Playfair Display";
+} 
+
+#title { /* Centraliza a imagem do souza e os demais itens da div */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title img { /* anima por 1 segundo a imagem do souza e muda a largura pra 40% */
+  animation: animar 1s;
+  width: 40%;
+  height: auto;
+}
+
+#line1 { /* cria uma linha que separa a div title das duas abas abaixo */
+  border: none;
+  border-top: 2px solid black;
+  width: 90%;
+  left: 4.8%;
+  position: absolute;
+}
+
+.caixinha { /* mexe na classe que modifica as duas abas principais, centralizando elas no meio e dando o devido espaçam,ento */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  gap: 20px; /* ESPAÇAMENTO ENTRE AS DIVS */
+  margin: 90px 4% 130px 4%; 
+  flex-wrap: wrap; /* quebra um elemento e faz ele ir pra baixo se ele ultrapassar o tamanho da div */
+}
+
+#info, #eventos { /* Muda a cor do fundo das abas principais para branco e muda a altura pra 500 pixel */
+  flex: 1; /* é o mesmo que: flex-grow: 1; flex-shrink: 1; flex-basis: 0%;
+              o grow 1 deixa o item propicio a ocupar o espaço disponivel proporcionalmente entre as duas abas
+              o shrink 1 faz o item encolher se nao houver espaço suficiente 
+              o basis 0% faz o item ocupar o espaço disponivel que o grow 1 possibilita 
+           */
+  background-color: rgb(204, 204, 204);
+  height: 500px;
+}
+
+#info, #i1, #eventos, #i2, #i3, #i4 {
+ position: relative;
+ overflow: hidden; /* recorta/esconde as bordas quando um item ultrapassar o tamanho da div (nesse caso o background) */
+ z-index: 1; /* mexe nas camadas e seta ela pra 1, quanto maior o numero mais alto a camada fica*/
+ text-align: center;
+ border-radius: 30px;
+ border-color: white;
+ 
+ cursor: pointer; /* faz o cursor mudar quando passar por cima do item */
+
+}
+
+#info::before, #i1:before, #eventos::before, #i2::before, #i3::before, #i4::before { /* cria uma camada sobreposta sobre essas divs (usei isso pro filter blur dar blur apenas no background)*/
+  position: absolute;
+  content: ""; /* deixa o conteudo dessa camada como " " (sem conteudo de string) */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  filter: blur(5px); /* borra o elemento */
+  z-index: -1; /* coloca essa camada embaixo de todas as outras */
+}
+#info:hover, #i1:hover, #eventos:hover, #i2:hover, #i3:hover, #i4:hover  { /* quando o mouse passa por cima o tamanho diminue pra dar um efeito */
+  height: 480px;
+}
+#info::before {
+  background-image: url("https://umjornalregional.com.br/wp-content/uploads/2022/04/souza-naves-site-1024x538.jpg");
+}
+#eventos::before {
+  background-image: url("https://photos.wikimapia.org/p/00/00/33/76/78_big.jpg");
+}
+#i1::before {
+  background-image: url("https://i.ibb.co/1Jz5fHtJ/Album-De-Fotos.png");
+}
+#i2::before {
+  background-image: url("https://i.ibb.co/S4pmNnyD/Matriculas.png");
+}
+#i3::before {
+  background-image: url("https://i.ibb.co/ks7VvQVh/Regrasa.png");
+}
+#i4::before {
+  background-image: url("https://i.ibb.co/Xk4pLMpL/Blog.png");
+}
+#i1::before, #i2::before, #i3::before, #i4::before{
+  filter: blur(0);
+  background-size: 170%;
+}
+
+#info p, #eventos p { /* modifica o paragrafo das abas principais */
+  text-shadow: 4px 4px 4px rgba(0 , 0 , 0 , 1); 
+  color: rgba(255, 255, 255, 0.719);
+  font-size: 30px;
+  margin-top: 30%;
+}
+
+#rodape { /*modifica o rodape da pagina (footer)*/
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+background-color: rgba(0, 0, 0, 0.829);
+color: white;
+height: 300px;
+}
+
+#parana { /* modifica a logo do parana */
+position: absolute;
+margin-right: 1150px;
+margin-top: 0px;
+}
+
+#conteudodofooter{ /* modifica o conteudo/texto do footer */
+display: flex;
+flex-direction: column;
+position: absolute;
+justify-content: center;
+align-items: center;
+height: 100px;
+width: 400px;
+border-style: solid;
+border-width: 2px;
+border-left-color: white;
+border-right-color: #00000000;
+border-top-color: #00000000;
+border-bottom-color: #00000000;
+margin-right: 500px;
+}
+
+#conteudodofooter p{ /* espaçamento interno do paragrafo do footer */
+padding: 5px;
+}
+
+#instagramsouza { /* texto que aparece em cima da logo do instagram */
+margin-left: 900px;
+}
+
+#instagramImg{ /* imagem do instagram */
+margin-top: 20px;
+width: 60px;
+height: 60px;
+}
+
+#cesnAbas { /* abas do souza (album de fotos blog etc)*/
+  display: none; /* nenhum display (remove o elemento) */
+}
+
+#esquerda { /* seta esquerda */
+  color: white;
+  font-size: 40px; 
+  margin-right: 30px;
+  cursor: pointer;
+} 
+
+#direita { /* seta direita */
+  color: white;
+  font-size: 40px; 
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+#i1 {
+  display: flex;
+}
+#i2 {
+  display: none;
+}
+#i3 {
+  display: none;
+}
+#i4 {
+  display: none;
+}
+#matriculas { /* modifica a aba de matriculas */
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  background: #ffffff38;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  height: 160vh;
+  border-radius: 120px;
+}
+#matriculas p { /* texto das matriculas */
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+#i1 p, #i2 p, #i3 p, #i4 p { /* texto das abas do cesnAbas (album de fotos, blog etc)*/
+  text-shadow: 4px 4px 4px rgba(0 , 0 , 0 , 1);
+  color: rgba(255, 255, 255, 0.719);
+  font-size: 30px;
+  margin-top: 230px;
+}
+
+#i1, #i2, #i3, #i4 { /* modifica as abas do cesnAbas */
+  text-align: center; /* centraliza textos e elementos horizontalmente */
+  justify-content: center; /* centraliza os filhos horizontalmente */
+  flex: 0 0 500px; /* flex-grow: 0; flex-shrink: 0; e flex-basis: 500px; (ou seja deixa o tamanho fixo pra 500px de largura independente do tamanho do pai)*/
+  background-color: rgb(204, 204, 204);
+  height: 500px; /* 500px de altura */
+
+}
+
+#i1:hover, #i2:hover, #i3:hover, #i4:hover { /* precisei mudar o hover desses separadamente por causa do flex: 0 0 480px */
+  flex: 0 0 480px;
+  height: 480px;
+}
+
+
+#arrowback { /* flecha de voltar */
+  position: absolute;
+  color: white;
+  width: 80px;
+  height: 80px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px;
+  background-color: rgba(0, 0, 0, 0.829);
+  margin-right: 86vw;
+  margin-top: 5vh;
+  cursor: pointer;
+}
+#arrowback:hover {
+  width: 75px;
+  height: 75px;
+  background-color: rgba(0, 3, 49, 0.829);
+}
+#eventosaba { /* Aba dos eventos */
+  font-size: 60px;
+  color: white;
+  display: none;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 30px;
+  height: 100vh;
+  background: #ffffff38;
+  border-radius: 50px;
+}
+#eventosaba p {
+  margin-left: 42vw; /* vw = view´port width (largura do navegador)*/
+}
+
+/* RESPONSIVIDADES */
+@media(max-width: 600px){
+  
+  #line1 {
+    width: 550px;
+  }
+
+  #title img {
+    width: 70%;
+    margin-left: -20px;
+    }
+  .caixinha{
+    gap: 30px;
+    margin-left: 10px;
+  }
+  #info, #eventos {
+    flex: 0 0 550px;
+    height: 300px;
+
+  }
+  #i1 p, #i2 p, #i3 p, #i4 p {
+    font-size: 30px; 
+    margin-top: 230px;
+  }
+  #rodape {
+    font-size: 13px;
+    flex-direction: column;
+    width: 600px;
+  }
+  #conteudodofooter {
+    margin-left: 700px;
+    margin-bottom: 50px;
+  }
+  #instagramsouza {
+    margin-left: 200px; 
+  }
+  #instagramImg {
+    margin-top: 180px;
+    width: 45px;
+    height: 45px;
+  }
+  #parana {
+    margin-bottom: 50px;
+    margin-left: 730px;
+  }
+}
+/* AREA DE ADMIN */
+.Admin{
+  background-color: rgb(0, 47, 255);
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 20px;
+
+}
+
+.Admin:hover{
+  background-color: rgb(0, 153, 255);
+}
+
+.bisCOITO{
+top: 196px ;
+right: 90px;
+position: absolute;
+display: none;
+
+}
+
+.TEXTOA{
+background: rgba(0, 0, 0, 0.6);
+padding: 50px;
+color: whitesmoke;
+top: 68px;
+position: absolute;
+right: 10px;
+border-radius: 15px;
+display: none;
+}
+
+.fechar{
+display: none;
+z-index: 2;
+color: white;
+position: absolute;
+right: 20px;
+top: 80px;
+padding: 8px;
+border: none;
+border-radius: 8px;
+ font-size: 1.0rem;
+ background-color: rgba(0, 0, 0, 0);
+ cursor: pointer;
+}
+
+.acertar{
+background-color: green;
+border: none;
+padding: 5px;
+color: white;
+border-radius: 5px;
+position: absolute;
+top: 195px;
+right: 40px;
+cursor: pointer;
+display: none;
+}
+.acertar:hover{
+background-color: rgb(44, 73, 0);
+}
+
+.login{
+  display: none;
+  background-color: green;
+  background: rgba(0, 0, 0, 0.9);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute  ;
+  color: white;
+  padding: 80px;
+  border-radius: 10px;
+  z-index: 2;
+
+}
+
+.btn-login{
+  border-radius: 10px;
+  outline: none;
+  background-color: blue;
+  position:100%;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+ 
+}
+.btn-login:hover {
+  background-color: aqua;
+}  
+
+.cadastro{
+display: none;
+color: white;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+background: rgba(0, 0, 0, 0.9);
+padding: 65px;
+border-radius: 10px;
+z-index: 2;
+
+flex-direction: column;
+}
+
+.btn-cadastro{
+  border-radius: 10px;
+  outline: none;
+  background-color: blue;
+  position:100%;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  color: white;
+}
+
+.btn-cadastro:hover {
+  background-color: aqua;
+}
+
+.btn-PLOGAR {
+  border-radius: 10px;
+  outline: none;
+  background-color: blue;
+  position:100%;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  color: white;
+ 
+}
+
+.btn-PLOGAR:hover {
+background-color: aqua;
+}

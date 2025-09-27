@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin.Settings</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+    <h1 class="title">Coloque Eventos</h1>
+    <hr class="linha">
+    <button class="adicionar" id="adiciona">Adicione</button>
+    
+  
+    <div class="caixa">
+        <p class="texto1"></p>
+        <div class="colocar">
+            <button class="fechar" id="fechar">X</button>
+           <p class="info">Você pode colocar qualquer evento que o Colégio terá futuramente; 
+            <br><br>
+            Esses evento vão durar 10 dias após você colocar ele;
+           </p> 
+           <div class="entrada"> 
+            <input type="text" class="inseri" id="escrever" placeholder="insira o seu evento">
+            <button class="inserir" id="inserir">Escrever</button>
+           </div>
+        </div>
+    </div>
+ 
+    <script src="admin.js"></script>
+</body>
+</html>

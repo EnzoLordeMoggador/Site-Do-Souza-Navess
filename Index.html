@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- largura da pagina = largura da tela do dispositivo e zoom = 1.0 (sem zoom) -->
+    <title>Colégio Souza Naves</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Assets/Logo do Colégio Souza Naves.png" type="image/x-icon">
+</head>                 
+<body>
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+    <div id="title">
+     <img src="Assets/Logo do Colégio Souza Naves.png" alt="Logo Do Souza">  
+     <button class="Admin" id="btnadmin">Admin</button>
+     <button class="acertar" id="Acertar"> <span class="material-symbols-outlined">check</span></button>
+     <input type="number" class="bisCOITO" id="SENHAU">
+     <button class="fechar">X</button>
+     <p class="TEXTOA">Para se tornar Admin coloque a senha correta</p>
+     <div id="arrowback">
+        <span class="material-symbols-outlined" style="font-size: 50px;">
+               arrow_back
+           </span>
+       </div>
+    </div>
+    <hr id="line1">
+    <div class="caixinha" id="caixinhaa">
+        <div id="info">
+           <p>INFORMAÇÕES GERAIS DA ESCOLA</p>
+        </div>
+        <div id="eventos">
+            <p>EVENTOS DA ESCOLA</p>
+        </div>
+    </div>
+    <div id="matriculas">
+      <div>
+        <p>Números de Souza Naves, C E-Ef M Profis</p>
+        <p>Turmas <span style="margin-left: 1130px;">116</span></p>
+        <p>Matrículas <span style="margin-left: 1100px;">1784</span></p>
+        <p>Souza Naves, C E-Ef M Profis</p>
+        <p style="text-align: start; margin-left: 40px;"><span class="material-symbols-outlined">
+stat_0
+</span> Ensino Médio</p>
+        <p>Turmas <span style="margin-left: 1130px;">28</span></p>
+        <p>Matrículas <span style="margin-left: 1100px;">841</span></p>
+        <p style="text-align: start; margin-left: 40px;"> <span class="material-symbols-outlined">
+stat_0
+</span> Ensino Fundamental</p>
+        <p>Turmas <span style="margin-left: 1130px;">24</span></p>
+        <p>Matrículas <span style="margin-left: 1100px;">746</span></p>
+        <p style="text-align: start; margin-left: 40px;"> <span class="material-symbols-outlined">
+stat_0
+</span> Atividades Complementares</p>
+        <p>Turmas <span style="margin-left: 1130px;">41</span></p>
+        <p>Matrículas <span style="margin-left: 1100px;">117</span></p>
+<p style="text-align: start; margin-left: 40px;"> <span class="material-symbols-outlined">
+stat_0
+</span> Atendimento Educacional Especializado</p>
+        <p>Turmas <span style="margin-left: 1130px;">23</span></p>
+        <p>Matrículas <span style="margin-left: 1100px;">80</span></p> 
+      </div> 
+      <p>Fonte : consultaescolas.pr.gov.br</p>
+    </div>    
+    <div class="one">
+    <div class="caixinha" id="cesnAbas">
+        <p id="esquerda"><</p>
+      <div id="i1">
+        <p>Álbum de Fotos</p>
+      </div>
+      <div id="i2">
+        <p>Matrículas</p>
+      </div>
+      <div id="i3">
+        <p>Regras</p>  
+      </div>
+      <div id="i4">
+        <p>Blog Do Souza</p>
+      </div>  
+       <p id="direita">></p>
+    </div>    
+    </div>
+    <div id="eventosaba">
+       <p>eventos</p>
+    </div>
+    <footer id="rodape">
+        <div id="conteudodofooter">
+            <p>Colégio Estadual Souza Naves</p>
+            <p>113, R. Monteiro Lobato, 421 - Centro, Rolândia - PR, 86600-000</p>
+            <p>04332561572</p>
+        </div>
+        <div id="instagramsouza">
+            <p id="pInsta">Nos visite no Instagram</p>
+           <a href="https://www.instagram.com/cesnrolandia/?hl=en" target="_blank">
+            <img id="instagramImg" onclick = "cesnInstagram" src="https://upload.wikimedia.org/wikipedia/commons/2/28/Instagram_logo.png" alt="instagram logo">
+           </a> 
+            
+        </div>
+        <img id="parana" src="https://web.celepar.pr.gov.br/drupal/images/logo_parana_113x99_texto_branco.png" alt="Logo Paraná">
+    </footer>
+
+    <div class="login">
+      <h1>Login</h1>
+      <br>
+      <input type="email" id="loginEmail" placeholder="email" >
+      <br> <br>
+      <input type="password" id="loginSenha" placeholder="senha">
+      <br><br>
+      <button class="btn-login">logar</button>
+  </div>
+  </div>
+  <div class="cadastro">
+      <h1>Cadastro</h1>
+      <br>
+      <input type="text" id="nome" placeholder="nome">
+      <br><br>
+      <input type="email" id="email" placeholder="Email do Colégio">
+      <br><br>
+      <input type="password" id="senha" placeholder="senha">
+      <br><br>
+      <button class="btn-cadastro" type="button">cadastrar</button>
+      <br>
+      <button class="btn-PLOGAR" type="button">Já tem login</button>
+  </div>
+
+</body>
+<script src="Script.js"></script>
+</html>
